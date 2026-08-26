@@ -25,7 +25,7 @@ bmi = round(bmi, 1)
 # расчёт нормы воды
 water_ml = user_weight * WATER_REC
 water_l = water_ml / WATER_PER_KG
-print("Отчет для пользователя:", user_name.title(),' (', {user_age}, 'г.)')
+print("Отчет для пользователя:", user_name.title(),' (', user_age, 'г.)')
 print("Твой Индекс Массы Тела:", bmi)
 print(f"Рекомендуемая норма воды: {water_l} л. в день")
 print('Расчет окончен. Будьте здоровы!')
