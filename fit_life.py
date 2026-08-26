@@ -11,7 +11,8 @@ WATER_PER_KG = 1000
 print('Привет, Я бот FitLife — помогу следить за здоровьем и прогрессом.')
 user_name = input('Напишите, пожалуйста, вашу фамилию и имя.')
 user_age = int(input('Укажите полное количество лет. '))
-print("Привет, ", user_name.title())
+formatted_name = user_name.title()
+print(f"Привет, {formatted_name}!")
 
 # Порядок ввода строго как в тесте: имя, возраст, ВЕС, РОСТ
 user_weight = float(input('Укажите, пожалуйста, вес (в кг, через точку)'))
@@ -27,7 +28,7 @@ water_ml = user_weight * WATER_REC
 water_l = water_ml / WATER_PER_KG
 
 print('------------------------------------------------------------')
-print(f"Отчет для пользователя:{user_name.title()} ({user_age} г.)")
+print(f"Отчет для пользователя:{formatted_name} ({user_age} г.)")
 print("Твой Индекс Массы Тела:", bmi)
 print(f"Рекомендуемая норма воды: {water_l} л. в день")
 print('============================================================')
