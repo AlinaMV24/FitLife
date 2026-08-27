@@ -1,9 +1,8 @@
-import io
 import sys
 
-# Принудительно устанавливаем кодировку вывода в UTF-8
-# Это решает ошибку UnicodeDecodeError в тестах на Windows
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
+
 
 WATER_REC = 30
 WATER_PER_KG = 1000
@@ -20,8 +19,7 @@ user_height = float(input('Пожалуйста, введите свой рос�
                           '(в м, через точку например: 1.62) '))
 
 # расчёт индекса массы тела
-bmi = user_weight / (user_height ** 2)
-bmi = round(bmi, 1)
+bmi = round(user_weight / (user_height ** 2), 1)
 
 # расчёт нормы воды
 water_ml = user_weight * WATER_REC
